@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Title -->
+    <title>Nebular.css</title>
+
+    <!-- StyleSheets -->
+    <link rel="stylesheet" type="text/css" href="src/nebular.1.0.prod.css">
+    <link rel="stylesheet" type="text/css" href="custom.grids.4.min.css">
+    <link rel="stylesheet" type="text/css" href="awesomeness.min.css">
+
+</head>
+
+<body>
+    <main>
+        <aside>
+            <nav>
+                <a class="title" href="index.html">Nebular.css</a>
+                <a class="nav" href="#htu">How to use</a>
+                <a class="nav" href="#grids">Grids</a>
+
+                <a class="nav" href="#forms">Forms</a>
+                <a class="nav s" href="#textinputs">/inputs</a>
+                <a class="nav s" href="#textareas">/textareas</a>
+                <a class="nav s" href="#buttons">/buttons</a>
+                <a class="nav s" href="#selects">/selects</a>
+
+                <a class="nav" href="#formwidgets">Form Widget</a>
+                <a class="nav s" href="#radio">/radio</a>
+                <a class="nav s" href="#checkboxes">/checkbox</a>
+                <a class="nav s" href="#toggleswitch">/switch</a>
+                <a class="nav s" href="#iconinputs">/icon input</a>
+
+                <a class="nav" href="#datadisplay">Data Display</a>
+                <a class="nav s" href="#tables">/tables</a>
+                <a class="nav s" href="#lists">/lists</a>
+                <a class="nav s" href="#codeblocks">/codeblocks</a>
+                <a class="nav s" href="#highlights">/highlights</a>
+                <a class="nav s" href="#para">/paragraphs</a>
+                <a class="nav s" href="#heading">/headings</a>
+                <a class="nav s" href="#links">/links</a>
+                <a class="nav s" href="#quotes">/blockquotes</a>
+
+                <a class="nav" href="#tooltips">Tooltips</a>
+
+
+            </nav>
+        </aside>
+        <section>
+            <div style="text-align:right; position:fixed;right:15px;z-index;top:0; z-index:20;display:block;">
+                <a href="https://github.com/Jacob-Gray/nebular.css" class="-btn -cb">View on Github</a>
+                <a href="download.html" class="-btn -cg -b -ar" data-tooltip="Download the entire library, or just the parts you need." target="_blank">Downloads Page</a>
+            </div>
+            <h2 class="-heading -h2" id="htu">What is nebular.css?</h2>
+            <p class="-para -t">Nebular(previously known as <span class="-highlight--y">breezy.css</span>) is a css framework, created for the purpose of creating good looking websites, without carrying extra weight. The nebular form module, for example, is less then 2kb. Nebular is made in a modular system, so you can add what parts you need for your project, without requiring excess files. Nebular was made by <a href="//debonairstudios.com/jacob" class="-link">Jacob Gray</a>, as a personal project. </p>
+            <p class="-para -t">Nebular doesn't come with any fonts, but all the elements will inherit the font of their parent. We reccomend using the Lato, Roboto, Open sans, or similar fonts. This page uses lato, which can be easily added from Google Fonts.</p>
+
+            <h2 class="-heading -h2">How do you use nebular?</h2>
+            <p class="-para -t">Nebular is currently built in 5 modules, listed on the left. You can add the entire library, or just add the modules you want for your project.</p>
+            <p class="-para">To style an element with nebular, you simply add the class you want to it. For example, if we want to add a <a href="#buttons" class="-link">button</a>, we write our html like so:</p>
+            <code class="-codeblock -r">&lt;button class="-btn"&gt;Button&lt;/button&gt;</code>
+            <p class="-para">That will render this:</p>
+            <button class="-btn">Button</button>
+            <p class="-para">To customize the button, we will use classes that we refer on this page to as <span class="-highlight--y">"flags"</span>. A flag is a css class that is relative to the specific element. In our example, we will be using the buttons <code class="-codeblock -g -i">.-cb</code>(<b>C</b>olor <b>B</b>lue) flag to change the theme of the button. Our buttons HTML now looks like:</p>
+            <code class="-codeblock -r">&lt;button class="-btn -cb"&gt;Button&lt;/button&gt;</code>
+            <p class="-para">And renders a nice blue button:</p>
+            <button class="-btn -cb">Button</button>
+            <p class="-para">As you can see, nebular is quite simple to use. Don't be afraid to edit the source to fit your needs, nebular is most powerful when you customize it to work best for you. If you want to see how an element on this page gets it's style, simply use the browsers inspector.</p>
+
+
+
+
+
+
+            <!--Grid Module Desc.-->
+            <h1 class="-heading -h2" id="grids"><a href="#grids" class="headerLinks">Grid Module</a></h1>
+            <p class="-para">The default grid system is a 12 column/row grid. There is also a 24 column/row grid file available, if further grid precision is needed. If you want different grid sizes, there is a SCSS mixin on the download page that makes generating new grids super easy. Simply download it, follow the instructions at the top of it, and compile. This allows you to make grids of any size.</p>
+			<table class="-table">
+				<thead>
+					<td>Flags</td>
+					<td>Flag use</td>
+				</thead>
+				<tr>
+					<td><code class="-codeblock -g">-v</code></td>
+					<td>Changes the grid direction to verticle. Default is horizontal.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-g</code></td>
+					<td>Shorthand for telling a row or column to act like a grid, use if you want to have a grid inside a grid(See below example)</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-gu</code></td>
+					<td>Adds a 5px gutter to the grid.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-row</code></td>
+					<td>Use to create a row. Note that rows parents must have the <code class="-codeblock -g -i">-v</code> flag.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-col</code></td>
+					<td>Use to create a column. Note that columns parents must <b>not</b> have the <code class="-codeblock -g -i">-v</code> flag.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-c{int}</code></td>
+					<td>Sets the columns width. {int} would be the number of column spaces you want the column to take up.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-r{int}</code></td>
+					<td>Sets the rows height. {int} would be the number of row spaces you want the row to take up.</td>
+				</tr>
+				<tr>
+					<td><code class="-codeblock -g">-g{int}</code></td>
+					<td>Size of grid. The default is 12.</td>
+				</tr>
+			</table>
+            <p class="-para">This demo grid helps you understand how the grid system works. Hover over it to see the different parts. Use the above table to understand the different meanings of the flags, and your browsers inspector to view the HTML structure:</p>
+            <div class="-grid -g12 demo-grid">
+            	<div class="-col -c4 -v -g">
+					<div class="-row -r6"><code class="-codeblock -i -g">-grid -g12</code> / <code class="-codeblock -i -g">-col -c4 -v -g</code> / <code class="-codeblock -i -g">-row -r6</code></div>
+					<div class="-row -r3"><code class="-codeblock -i -g">-grid -g12</code> / <code class="-codeblock -i -g">-col -c4 -v -g</code> / <code class="-codeblock -i -g">-row -r3</code></div>
+					<div class="-row -r3"><code class="-codeblock -i -g">-grid -g12</code> / <code class="-codeblock -i -g">-col -c4 -v -g</code> / <code class="-codeblock -i -g">-row -r3</code></div>
+				</div>
+				<div class="-col -c6"><code class="-codeblock -i -g">-grid -g12</code> / <code class="-codeblock -i -g">-col -c6</code></div>
+				<div class="-col -c2"><code class="-codeblock -i -g">-grid -g12</code> / <code class="-codeblock -i -g">-col -c2</code></div>
+            </div>
+			<p class="-para">You can have different sized grids inside of each other. For example, here is a custom size 4 grid, inside of the default size 12(Note that before you can use a custom grid, you first must generate it and add the css file to the document):</p>
+			<div class="-grid -g12 demo-grid -gu">
+				<div class="-col -c6 -v -g -g4 ">
+					<div class="-row -r2"><code class="-codeblock -i -g">-col -c6 -v -g -g4</code> so I am a column that takes up 6 out of twelve spaces. I also create a verticle(<code class="-codeblock -i -g">-v</code>) grid(<code class="-codeblock -i -g">-g</code>) that uses a custom 4 space grid(<code class="-codeblock -i -g">-g4</code>). This is a row in that grid, which takes up 2 out of the 4 vertical spaces. </div>
+				  <div class="-row -r1">And both of these take up</div>
+				  <div class="-row -r1">1 out of 4 spaces.</div>
+				</div>
+				<div class="-col -c4"><code class="-codeblock -i -g">-col -c4</code> so I am a column that takes up 4 out of 12 spaces</div>
+				<div class="-col -c2"><code class="-codeblock -i -g">-col -c2</code> so I am a column that takes up 2 out of 12 spaces</div>
+			</div>
+			<p class="-para">As you probably noticed, that grid has gutters, using the <code class="-codeblock -i -g">.-gu</code> flag.</p>
+
+
+
+            <!--Form Module Desc-->
+            <h1 class="-heading -h2" id="forms"><a href="#forms" class="headerLinks">Form Module</a></h1>
+            <p class="-para">The form module contains all the styling for form elements, such as buttons, inputs and textareas. There is also a <a href="#formwidgets" class="-link">Form Widget Module</a>, which we will talk about in a minute.</p>
+
+            <h3 class="-heading -h4 -l" id="textinputs"><a href="#textinputs" class="headerLinks">Text Inputs</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables select, allowing no user input.</td>
+                </tr>
+            </table>
+            <p class="-para">The class to add a input is <code class="-codeblock -i -g">.-input</code>.</p>
+            <input class="-input" placeholder=".-input">
+            <input class="-input" placeholder=".-input [disabled]" disabled>
+            <p class="-para">To disable an input, simply add a <code class="-codeblock -i -r">disabled</code> attribute to the input.</p>
+
+            <h3 class="-heading -h4 -l" id="textareas"><a href="#textareas" class="headerLinks">Textareas</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables textarea, allowing no user input.</td>
+                </tr>
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-h</code></td>
+                    <td>Allows only horizontal resizing of textarea by user.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-v</code></td>
+                    <td>Allows only vertical resizing of textarea by user.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-n</code></td>
+                    <td>Allows <b>no</b> resizing of textarea by user.</td>
+                </tr>
+            </table>
+            <p class="-para">To style a textarea, simply add the class <code class="-codeblock -i -g">.-textarea</code>. </p>
+            <textarea class="-textarea" placeholder=".-textarea"></textarea>
+            <textarea class="-textarea" placeholder=".-textarea [disabled]" disabled></textarea>
+
+            <h3 class="-heading -h4 -l" id="buttons"><a href="#buttons" class="headerLinks">Buttons</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables button, allowing no user click.</td>
+                </tr>
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-cw</code></td>
+                    <td>Sets the color to the themes white color</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-cb</code></td>
+                    <td>Sets the color to the themes blue color</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-cg</code></td>
+                    <td>Sets the color to the themes green color</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-cr</code></td>
+                    <td>Sets the color to the themes red color</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-u</code></td>
+                    <td>Adds 3D effect to button.</td>
+                </tr>
+            </table>
+            <p class="-para">The class to add a button is <code class="-codeblock -i -g">.-btn</code>. </p>
+            <button class="-btn">Button</button>
+            <button class="-btn -cw -u">Button</button>
+            <button class="-btn -cb">Button</button>
+            <button class="-btn -cg -u">Button</button>
+            <button class="-btn -cr">Button</button>
+
+            <p class="-para">Buttons can be disabled with the disabled attribute:</p>
+            <button class="-btn" disabled>Button</button>
+            <button class="-btn -cw -u" disabled>Button</button>
+            <button class="-btn -cb" disabled>Button</button>
+            <button class="-btn -cg" disabled>Button</button>
+            <button class="-btn -cr" disabled>Button</button>
+            <p class="-para">Creating your own button color is as easy as setting the <code class="-codeblock -i -b">background-color</code>:</p>
+            <code class="-codeblock  -b">background-color:#5f16b4;<br>color:white;</code>
+            <button class="-btn" style="background-color:#5f16b4;color:white;">Button</button>
+            <p class="-para">You can play with the below CSS to style the demo-btn:</p>
+            <style class="-codeblock  -b" contenteditable="true">.demo-btn {
+  background-color: #cb4d27;
+  color: white;
+}</style>
+            <button class="-btn -u demo-btn">Demo-btn(with .-u flag)</button>
+
+            <h3 class="-heading -h4 -l" id="selects"><a href="#selects" class="headerLinks">Selects</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables select, allowing no user input.</td>
+                </tr>
+            </table>
+            <p class="-para">Selects use the class <code class="-codeblock -i -g">.-select</code>. </p>
+            <select class="-select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+            <select class="-select" disabled>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+
+            <!--Form Widget Module Desc-->
+            <h1 class="-heading -h2" id="formwidgets"><a href="#formwidgets" class="headerLinks">Form Widgets Module</a></h1>
+            <p class="-para">The form widget module is unique in that it is the <span class="-highlight--y">only module that requires extra HTML markup.</span> This requirement allows us to create more unique form elements, such as custom radio buttons, and inputs with icons.</p>
+            <h3 class="-heading -h4 -l" id="radio"><a href="#radio" class="headerLinks">Radio Buttons</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables radio button, allowing no user selection.</td>
+                </tr>
+            </table>
+            <p class="-para">Radio buttons use a custom html structure using a label:</p>
+            <code class="-codeblock -r">&lt;label class="-radio"&gt;<br>  &lt;span class="-title"&gt;Optional Title&lt;/span&gt;<br>  &lt;input type="radio"&gt;<br>  &lt;span class="-b"&gt;&lt;/span&gt;<br>&lt;/label&gt;</code>
+            <p class="-para">Use the class <code class="-codeblock -i -g">.-radio</code> on the label. The <code class="-codeblock -g -i">.-b</code> span <b>must</b> be below the input.</p>
+            <label class="-radio">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="testRadioGroup">
+                <span class="-b"></span>
+            </label>
+            <label class="-radio">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="testRadioGroup">
+                <span class="-b"></span>
+            </label>
+            <label class="-radio">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="testRadioGroup">
+                <span class="-b"></span>
+            </label>
+            <p class="-para">The title span is optional, and can be left out if no title is wanted.</p>
+            <label class="-radio">
+                <input type="radio" name="testRadioGroup2">
+                <span class="-b"></span>
+            </label>
+            <label class="-radio">
+                <input type="radio" name="testRadioGroup2">
+                <span class="-b"></span>
+            </label>
+            <label class="-radio">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="testRadioGroup2" disabled>
+                <span class="-b"></span>
+            </label>
+            <p class="-para">You disable a radio button by setting the disabled attribute on the input.</p>
+            <h3 class="-heading -h4 -l" id="checkboxes"><a href="#checkboxes" class="headerLinks">Checkboxes</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables checkbox, allowing no user selection.</td>
+                </tr>
+            </table>
+            <p class="-para">Checkboxes use a custom html structure that is basically the same as the radio button:</p>
+            <code class="-codeblock -r">&lt;label class="-checkbox"&gt;<br>  &lt;span class="-title"&gt;Optional Title&lt;/span&gt;<br>  &lt;input type="checkbox"&gt;<br>  &lt;span class="-b"&gt;&lt;/span&gt;<br>&lt;/label&gt;</code>
+            <p class="-para">Use the class <code class="-codeblock -i -g">.-checkbox</code> on the label. The <code class="-codeblock -g -i">.-b</code> span <b>must</b> be below the input.</p>
+            <label class="-checkbox">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox">
+                <span class="-b"></span>
+            </label>
+            <label class="-checkbox">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox">
+                <span class="-b"></span>
+            </label>
+            <label class="-checkbox">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox" disabled>
+                <span class="-b"></span>
+            </label>
+            <h3 class="-heading -h4 -l" id="toggleswitch"><a href="#toggleswitch" class="headerLinks">Switches</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables switch, allowing no user selection.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -r">data-on</code></td>
+                    <td>Sets custom text for the on position</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -r">data-off</code></td>
+                    <td>Sets custom text for the off position</td>
+                </tr>
+            </table>
+            <p class="-para">A toggle switch has a bit different of a HTML structure:</p>
+            <code class="-codeblock -r">&lt;label class="-switch"&gt;<br>  &lt;span class="-title"&gt;Optional Title&lt;/span&gt;<br>  &lt;input type="checkbox"&gt;<br>  &lt;span class="-b" data-on="On" data-off="Off" &gt;&lt;/span&gt;<br>&lt;/label&gt;</code>
+            <p class="-para">Use the class <code class="-codeblock -i -g">.-switch</code> on the label. The <code class="-codeblock -g -i">.-b</code> span <b>must</b> be below the input.</p>
+            <label class="-switch">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox">
+                <span class="-b"></span>
+            </label>
+            <label class="-switch">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox">
+                <span class="-b"></span>
+            </label>
+            <label class="-switch">
+                <span class="-title">Optional Title</span>
+                <input type="checkbox" disabled>
+                <span class="-b"></span>
+            </label>
+            <p class="-para">The radio, checkbox, and switch classes can be used interchangably, so you can simply replace the checkbox in the html with a radio button, if you wish for a radio button like switch:</p>
+            <label class="-switch">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="clasone">
+                <span class="-b"></span>
+            </label>
+            <label class="-switch">
+                <span class="-title">Optional Title</span>
+                <input type="radio" name="clasone">
+                <span class="-b" data-on="text" data-off="Custom"></span>
+            </label>
+
+            <h3 class="-heading -h4 -l" id="iconinputs"><a href="#iconinputs" class="headerLinks">Icon Inputs</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables select, allowing no user selection.</td>
+                </tr>
+            </table>
+            <p class="-para">Icon inputs are the same as normal inputs, except they are made to have an icon to the left of them:</p>
+            <code class="-codeblock -r">&lt;label class="-iconinput"&gt;<br>  &lt;span class="-icon"&gt;@&lt;/span&gt;<br>  &lt;input type="email"&gt;<br>&lt;/label&gt;</code>
+            <p class="-para">Use the class <code class="-codeblock -i -g">.-iconinput</code> on the label. The <code class="-codeblock -g -i">.-icon</code> span should be above the input.</p>
+            <label class="-iconinput">
+                <span class="-icon">@</span>
+                <input type="email">
+            </label>
+            <p class="-para">You can, of course, use an icon font here, text, or just an image. Remember, nebular is most powerful when you edit it to add your own changes. It is made to be a platform that you can build off of, not free-standing(although it can be).</p>
+
+            <!--Table Module Desc-->
+            <h1 class="-heading -h2" id="datadisplay"><a href="#datadisplay" class="headerLinks">Data Display Module</a></h1>
+            <p class="-para">The data display module contains all the elements used to display data, such as tables, lists, codeviews, and highlights.</p>
+
+            <h3 class="-heading -h4 -l" id="tables"><a href="#tables" class="headerLinks">Tables</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">tabindex="number"</code></td>
+                    <td>Allows the row it is added to to be focusable.</td>
+                </tr>
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-s</code></td>
+                    <td>Adds the select styles. If you want the row to be focusable, add a <code class="-codeblock -i -r">tabindex</code>.</td>
+                </tr>
+            </table>
+            <p class="-para">You have already seen the table module in action, it is what is used for all the tables on this page.</p>
+            <p class="-para">To use the table module, we first start with a default table:</p>
+            <code class="-codeblock -r">&lt;table class="-table"&gt;<br>  &lt;thead&gt;<br>    &lt;td&gt;TableHeading&lt;/td&gt;<br>    &lt;td&gt;tableHeading2&lt;/td&gt;<br>  &lt;/thead&gt;<br>  &lt;tr&gt;<br>    &lt;td&gt;Table Content&lt;/td&gt;<br>    &lt;td&gt;Table Content2.&lt;/td&gt;<br>  &lt;/tr&gt;<br>&lt;/table&gt;</code>
+            <p class="-para">That will render this:</p>
+
+            <table class="-table">
+                <thead>
+                    <td>TableHeading</td>
+                    <td>tableHeading2</td>
+                </thead>
+                <tr>
+                    <td>Table Content</td>
+                    <td>Table Content2.</td>
+                </tr>
+            </table>
+            <p class="-para">Extremely simplistic, but add in more data and table headings and it gets quite complex:</p>
+            <table class="-table">
+                <thead>
+                    <td>Employees of the month</td>
+                    <td>Job</td>
+                </thead>
+                <tr>
+                    <td>Tom F.</td>
+                    <td>Plumber</td>
+                </tr>
+                <tr>
+                    <td>Chris D.</td>
+                    <td>Artist</td>
+                </tr>
+                <tr>
+                    <td>Sarah K.</td>
+                    <td>Designer</td>
+                </tr>
+                <thead>
+                    <td>Products</td>
+                    <td>Sales</td>
+                </thead>
+                <tr>
+                    <td>Binary Monkey</td>
+                    <td>$30.84</td>
+                </tr>
+                <tr>
+                    <td>Flying Car</td>
+                    <td>$493243.43</td>
+                </tr>
+
+            </table>
+            <p class="-para">Table rows are selectable, with the <code class="-codeblock -g -i">-s</code> flag:</p>
+            <table class="-table -s">
+                <thead>
+                    <td>Candy</td>
+                    <td>Amount</td>
+                </thead>
+                <tr tabindex="5">
+                    <td>Jellies</td>
+                    <td>45 cubic m</td>
+                </tr>
+                <tr tabindex="6">
+                    <td>Chocolate</td>
+                    <td>493.2 kg</td>
+                </tr>
+                <tr tabindex="7">
+                    <td>Smarties</td>
+                    <td>A whole lot.</td>
+                </tr>
+            </table>
+
+            <h3 class="-heading -h4 -l" id="lists"><a href="#lists" class="headerLinks">Lists</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">tabindex="number"</code></td>
+                    <td>Allows the list item it is added to to be focusable.</td>
+                </tr>
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-s</code></td>
+                    <td>Adds the select styles. If you want the item to be focusable, add a <code class="-codeblock -i -r">tabindex</code>.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-n</code></td>
+                    <td>Converts the list into a numbered list.</td>
+                </tr>
+            </table>
+            <p class="-para">Lists are styled with the <code class="-codeblock -g -i">.-list</code> class. Lists are used to render a visual cascade of informtation:</p>
+            <ul class="-list">
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item</li>
+            </ul>
+            <p class="-para">If you want a numbered list, add the <code class="-codeblock -g -i">-n</code> flag:</p>
+            <ul class="-list -n">
+                <li>List item</li>
+                <li>List item
+                    <ul>
+                        <li>List Item</li>
+                        <li>List Item
+                            <ul>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                                <li>List Item</li>
+                            </ul>
+                        </li>
+                        <li>List Item</li>
+                    </ul>
+                </li>
+                <li>List item
+                    <ul>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="-para">As you can see above, lists can be embedded inside one another. Note that if the parent list has the <code class="-codeblock -g -i">-list</code> class, none of the child lists need a class.</p>
+            <p class="-para">Lists are also selectable:</p>
+            <ul class="-list -s">
+                <li tabindex="9">List item</li>
+                <li tabindex="10">List item
+                    <ul>
+                        <li tabindex="11">List item</li>
+                        <li tabindex="12">List item</li>
+                        <li tabindex="13">List item</li>
+                    </ul>
+                </li>
+                <li tabindex="14">List item</li>
+            </ul>
+
+            <h3 class="-heading -h4 -l" id="codeblocks"><a href="#codeblocks" class="headerLinks">Codeblocks</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-r</code></td>
+                    <td>Changes the code color to the red theme.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-g</code></td>
+                    <td>Changes the code color to the green theme.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-b</code></td>
+                    <td>Changes the code color to the blue theme.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-i</code></td>
+                    <td>Displays the code <code class="-codeblock -b -i">inline</code> instead of <code class="-codeblock -b">block</code></td>
+                </tr>
+            </table>
+            <p class="-para">Codeblocks are styled with the <code class="-codeblock -g -i">.-codeblock</code> class. Codeblocks are used to display any text that you want to keep the white-spaces in, mainly used for displaying formatted code</p>
+            <code class="-codeblock -b">.element{<br>  background-color:orange;<br>  font-family:Lato;<br>}</code>
+            <p class="-para">Codeblocks have three default themes, that can be used with their flags.</p>
+            <h3 class="-heading -h4 -l" id="highlights"><a href="#highlights" class="headerLinks">Highlights</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-b</code></td>
+                    <td>Changes the highlight color to the blue theme.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-y</code></td>
+                    <td>Changes the highlight color to the yellow theme.</td>
+                </tr>
+            </table>
+            <p class="-para">Highlights are extremely simple. They are created with the <code class="-codeblock -i -b">.-highlight</code> class, and are used to <span class="-highlight--y">highlight key points in a document.</span></p>
+
+            <h3 class="-heading -h4 -l" id="para"><a href="#para" class="headerLinks">Paragraphs</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-t</code></td>
+                    <td>Adds an automatic indent to the first line of the paragraph</td>
+                </tr>
+            </table>
+            <p class="-para">Simple paragraph created with the <code class="-codeblock -i -b">.-para</code> class, and are used to display text.</p>
+
+            <h3 class="-heading -h4 -l" id="heading"><a href="#heading" class="headerLinks">Headings</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-l</code></td>
+                    <td>Removes the default bold of the heading</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-h1</code></td>
+                    <td>Largest heading</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-h2</code></td>
+                    <td>Secondary heading</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-h3</code></td>
+                    <td>Third smallest heading</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-h4</code></td>
+                    <td>Smallest heading</td>
+                </tr>
+            </table>
+            <p class="-para">Headings are created with the <code class="-codeblock -i -b">.-heading</code> class, and are used to display headings.</p>
+
+            <h3 class="-heading -h4 -l" id="links"><a href="#links" class="headerLinks">Links</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attributes</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">disabled</code></td>
+                    <td>Disables link</td>
+                </tr>
+            </table>
+            <p class="-para">Just a basic link, styled with the <code class="-codeblock -i -b">.-link</code> class. Adds a disabled option.</p>
+
+            <h3 class="-heading -h4 -l" id="quotes"><a href="#quotes" class="headerLinks">Blockquotes</a></h3>
+            <table class="-table">
+                <thead>
+                    <td>Attributes</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">data-title</code></td>
+                    <td>Display title for blockquote.</td>
+                </tr>
+            </table>
+            <p class="-para">A simple element to display quotes, styled with the <code class="-codeblock -i -b">.-quote</code> class. </p>
+            <blockquote class="-quote" data-title="Dorothy">Lions and tigers and bears; Oh My!</blockquote>
+
+            <!--Tooltip Module Desc-->
+            <h1 class="-heading -h2" id="tooltips"><a href="#tooltips" class="headerLinks">Tooltips Module</a></h1>
+            <p class="-para">The tooltips module is used to display custom tooltips.</p>
+            <table class="-table">
+                <thead>
+                    <td>Attribute</td>
+                    <td>Attribute use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -r">data-tooltip</code></td>
+                    <td>Sets the text for the tooltip</td>
+                </tr>
+                <thead>
+                    <td>Flags</td>
+                    <td>Flag use</td>
+                </thead>
+                <tr>
+                    <td><code class="-codeblock -g">-t</code></td>
+                    <td>Displays the tooltip to the top of the element</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-l</code></td>
+                    <td>Displays the tooltip to the left of the element</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-r</code></td>
+                    <td>Displays the tooltip to the right of the element</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-b</code></td>
+                    <td>Displays the tooltip to the bottom of the element</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-ar</code></td>
+                    <td>Aligns tooltip to the right</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-al</code></td>
+                    <td>Aligns tooltip to the left</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-tl</code></td>
+                    <td>Displays a light themed tooltip instead of the default dark one.</td>
+                </tr>
+                <tr>
+                    <td><code class="-codeblock -g">-d</code></td>
+                    <td>The tooltip is always displayed</td>
+                </tr>
+            </table>
+            <p class="-para">No class is needed for a tooltip. Simply add the <code class="-codeblock -r -i">data-tooltip</code> attribute. An empty tooltip will display if no value is set. The tooltip has a dark theme and is aligned in the center by default. You <b>must</b> choose a position with one of the position flags, or the tooltip will not display.</p>
+            <button class="-btn -t" data-tooltip="I am a custom tooltip!">Hover over me!</button>
+            <p class="-para">The tooltip module has many customizations, and can be added to any element, as long as the <code class="-codeblock -i -b">:before</code> and <code class="-codeblock -i -b">:after</code> pseudo elements can be used.</p>
+            <table class="-table">
+                <thead>
+                    <td>People</td>
+                    <td data-tooltip="Dead Ice Transit" class="-t">DIT</td>
+                </thead>
+                <tr>
+                    <td>Peter Yobacha</td>
+                    <td data-tooltip="Average" class="-r">0-9</td>
+                </tr>
+            </table>
+            <p class="-para">Tooltips can be permanently displayed with the <code class="-codeblock -i -b">-d</code> flag:</p>
+            <ul class="-list">
+                <li>Dee McMorrow</li>
+                <li data-tooltip="Please add your name to this list!" class="-d -t -al">
+                    <input class="-input" placeholder="John Doe">
+                </li>
+            </ul>
+            <p class="-para">You can position a tooltip on any side of the element with one of the position flags(don't mix position flags, bad things will happen):</p>
+            <button class="-btn -r -cr" data-tooltip="Using the -r flag">Right</button>
+            <button class="-btn -t" data-tooltip="Using the -t flag">Top</button>
+            <button class="-btn -l -cb" data-tooltip="Using the -l flag">Left</button>
+            <button class="-btn -b -cg" data-tooltip="Using the -b flag">Bottom</button>
+            <p class="-para">The align flags are used to customize where the tooltip is displayed on the x-axis:</p>
+            <ul class="-list">
+                <li class=" -b -d" data-tooltip="Tooltip">Default aligned in the center</li>
+                <li class="-t -d -al" data-tooltip="Tooltip">Aligned to the left</li>
+                <li class="-t -d -ar" data-tooltip="Tooltip">Aligned to the right</li>
+            </ul>
+            <p class="-para">And lastly, change the tooltip to a light theme with the <code class="-codeblock -i -b">-tl</code> flag:</p>
+            <button class="-btn -tl -t" data-tooltip="I have a light theme">Light theme!</button>
+
+            <p class="-para">And that is all their currently is. If you have a bug, please report it on the github issues page. Have an idea you think will add some value, or want to add more theme options? Go ahead! Fork this repository, or commit your theme/feature to the dev branch of this project on github. </p>
+            <div style="text-align:center;">
+                <a href="https://github.com/Jacob-Gray/nebular.css" class="-btn -cb">View on Github</a>
+                <a href="download.html" target="_blank" class="-btn -cg -t" data-tooltip="Download the entire library, or just the parts you need.">Downloads Page</a>
+            </div>
+            <footer>Nebular was made with &hearts; by <a class="-link" href="//debonairstudios.com/jacob">Jacob Gray</a></footer>
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+
+.-radio {
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	input {
+		display: none;
+		&:checked {
+			&+.-b {
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					top: 3px;
+					left: 3px;
+					right: 3px;
+					bottom: 3px;
+					background: #446fbd;
+					border-radius: 50%;
+				}
+			}
+		}
+		&:focus,
+		&:active {
+			&+.-b {
+				outline: 0;
+				border-color: #446fbd;
+				box-shadow: 0 0 2px #446fed;
+			}
+		}
+		&[disabled] + .-b {
+			cursor: not-allowed;
+			opacity: .4;
+			background: rgba(0, 0, 0, 0.4);
+		}
+	}
+	.-b {
+		vertical-align: top;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5);
+	}
+	.-title {
+		font-size: .8em;
+		vertical-align: top;
+		margin-top: .1em;
+		display: inline-block;
+	}
+}
+
+.-checkbox {
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	input {
+		display: none;
+		&:checked {
+			&+.-b {
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					top: 3px;
+					left: 6px;
+					width: 3px;
+					height: 10px;
+					transform: rotate(-45deg);
+					background: #446fbd;
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					top: 3px;
+					left: 6px;
+					width: 3px;
+					height: 10px;
+					transform: rotate(45deg);
+					background: #446fbd;
+				}
+			}
+		}
+		&:focus,
+		&:active {
+			&+.-b {
+				outline: 0;
+				border-color: #446fbd;
+				box-shadow: 0 0 2px #446fed;
+			}
+		}
+		&[disabled] + .-b {
+			cursor: not-allowed;
+			opacity: .4;
+			background: rgba(0, 0, 0, 0.4);
+		}
+	}
+	.-b {
+		vertical-align: top;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 2px;
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5);
+	}
+	.-title {
+		font-size: .8em;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: .1em;
+	}
+}
+
+.-iconinput {
+	margin: 5px;
+	display: flex;
+	input {
+		color: #222021;
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		border-radius: 0 2px 2px 0;
+		padding: 5px;
+		font-family: inherit;
+		font-size: inherit;
+		border-left: 0;
+		&:focus {
+			outline: 0;
+			border-color: #446fbd;
+			box-shadow: 0 0 2px #446fed;
+		}
+	}
+	.-icon {
+		padding: 6px;
+		border-radius: 2px 0 0 2px;
+		color: white;
+		background: #446fbd;
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5);
+	}
+}
+
+.-switch {
+	display: inline-block;
+	margin: 5px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	input {
+		display: none;
+		&:checked {
+			&+.-b {
+				&:before {
+					left: -100%;
+				}
+				&:after {
+					left: 0;
+				}
+			}
+		}
+		&:focus,
+		&:active {
+			&+.-b {
+				outline: 0;
+				border-color: #446fbd;
+				box-shadow: 0 0 2px #446fed;
+			}
+		}
+		&[disabled] + .-b {
+			cursor: not-allowed;
+			opacity: .4;
+			background: rgba(0, 0, 0, 0.4);
+		}
+	}
+	.-b {
+		vertical-align: top;
+		display: inline-block;
+		position: relative;
+		border-radius: 2px;
+		border: 1px solid rgba(0, 0, 0, 0.4);
+		width: 50px;
+		height: calc(1em + 10px);
+		overflow: hidden;
+		&:before, &:after {
+			background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			text-align: center;
+			width: 100%;
+			font-size: .8em;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+			box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5);
+			transition: .3s;
+		}
+		&:after {
+			content: "On";
+			background-color: #446fbd;
+			color: white;
+			left: 100%;
+		}
+		&:before {
+			content: "Off";
+			background-color: #fafafa;
+			color: #222021;
+			left: 0;
+		}
+		&[data-on]:after{content:attr(data-on)}
+		&[data-off]:before{content:attr(data-off)}
+	}
+	.-title {
+		display: inline-block;
+		font-size: .8em;
+		vertical-align: top;
+		margin-top: .4em;
+	}
+}

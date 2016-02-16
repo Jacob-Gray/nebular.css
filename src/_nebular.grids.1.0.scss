@@ -1,0 +1,41 @@
+@import "gridGenerator";
+.-grid {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    .-col, .-row {
+        &.-g {
+            display: flex;
+            flex-direction: row;
+            flex-flow: row;
+        }
+        &.-v {
+            flex-direction: column;
+            flex-flow: column;
+        }
+        &,
+        > * {
+            flex-shrink: 0;
+            flex-grow: 0;
+            box-sizing: border-box;
+        }
+    }
+    &.-v {
+        flex-direction: column;
+        flex-flow: column;
+    }
+    &.-gu {
+        .-col, .-row {
+            padding: 5px;
+        }
+    }
+    &.-g12,
+    &.-g12 {
+        .-col {
+            @include generateColumns(12);
+        }
+        .-row {
+            @include generateRows(12);
+        }
+    }
+}

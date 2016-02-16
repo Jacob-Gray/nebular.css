@@ -1,0 +1,51 @@
+//
+//	SCSS Grid generator for nebular.css by Jacob Gray
+//--------------------------------------------------
+//	Generating a new grid is extremely simple:
+//
+//	@import "path/to/gridGenerator"; (Or just include the mixins in the file)
+//
+//	@include generateGrid(9);
+//
+//	Boom. That's it.
+//	Include the compiled CSS file in your html document, and you can now use a flag for the grid, in this case `.-g9`
+//
+//	Example:
+//
+//	<div class="grid -g9">
+//		<div class="-c6"></div>
+//		<div class="-c9"></div>
+//	</div>
+//
+
+//Generates columns 
+@mixin generateColumns($num) {
+    @for $i from 1 through $num {
+        &.-c#{$i}{
+            width: 100/$num * $i + %;
+        }
+    }
+}
+
+//Generates rows
+@mixin generateRows($num) {
+    @for $i from 1 through $num {
+        &.-r#{$i}{
+            height: 100/$num * $i + %;
+        }
+    }
+}
+
+//Generates grid flag
+@mixin generateGrid($num){
+	&.-grid{
+		&.-g#{$num}, .-g#{$num} {
+			.-col {
+				@include generateColumns($num);
+			}
+			.-row {
+				@include generateRows($num);
+			}
+		}
+	}
+}
